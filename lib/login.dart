@@ -75,10 +75,6 @@ class _LoginState extends State<Login> {
             child: Container(
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 36, 43, 101),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
-                ),
               ),
               child: Column(
                 children: [

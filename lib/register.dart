@@ -14,11 +14,13 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final key = GlobalKey<FormState>();
   bool passwordVisible = false;
+  bool passwordVisible1 = false;
 
   @override
   void initState() {
     super.initState();
     passwordVisible = true;
+    passwordVisible1 = true;
   }
 
   final TextEditingController emailController = TextEditingController();
@@ -55,10 +57,6 @@ class _RegisterState extends State<Register> {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 36, 43, 101),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40),
-                topRight: Radius.circular(40),
-              ),
             ),
             child: Column(
               children: [
@@ -318,7 +316,7 @@ class _RegisterState extends State<Register> {
                                     bottom: 10),
                                 child: TextFormField(
                                   controller: conpassword,
-                                  obscureText: passwordVisible,
+                                  obscureText: passwordVisible1,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return "Enter Confirm Password";
@@ -348,7 +346,7 @@ class _RegisterState extends State<Register> {
                                     ),
                                     suffixIcon: IconButton(
                                       icon: Icon(
-                                        passwordVisible
+                                        passwordVisible1
                                             ? Icons.visibility
                                             : Icons.visibility_off,
                                         color: Color.fromARGB(255, 36, 42, 101),
@@ -356,7 +354,8 @@ class _RegisterState extends State<Register> {
                                       onPressed: () {
                                         setState(
                                           () {
-                                            passwordVisible = !passwordVisible;
+                                            passwordVisible1 =
+                                                !passwordVisible1;
                                           },
                                         );
                                       },
